@@ -8,13 +8,12 @@ namespace TSPGenerator
     {
         static void Main(string[] args)
         {
-            List<City> cities = ReadFromCSV();
-            CreateMatrix(cities);
+            List<City> cities = ReadFromCSV("wspol.csv");
+            CreateMatrix(cities, "matrix.txt");
         }
 
-        private static List<City> ReadFromCSV()
+        private static List<City> ReadFromCSV(string path)
         {
-            String path = "wspol.csv";
             StreamReader sr = new StreamReader(path);
             List<City> cities = new List<City>();
             String line;
@@ -41,9 +40,9 @@ namespace TSPGenerator
             return cities;
         }
 
-        private static void CreateMatrix(List<City> cities)
+        private static void CreateMatrix(List<City> cities,string OutputPatch)
         {
-            StreamWriter sw = new StreamWriter("matrix.txt");
+            StreamWriter sw = new StreamWriter(OutputPatch);
             sw.WriteLine(cities.Count);
             for (int i = 0; i < cities.Count; i++)
             {
