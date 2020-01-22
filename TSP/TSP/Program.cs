@@ -290,42 +290,5 @@ namespace TSP
             return nowaPopulacja;
         }
         #endregion
-        /* #region ruletka
-         public static List<int[]> OdwrocRuletka(List<int> ocena, List<int[]> osobniki)
-         {
-             int max = ocena.Max();
-             List<int> odwroconaOcena = new List<int>();
-             for (int i = 0; i < ocena.Count; i++)
-             {
-                 odwroconaOcena.Add((max - ocena[i] + 1));
-             }
-             for (int i = 0; i < liczbaPopulacji; i++)
-             {
-                 if (i > 0)
-                 {
-                     odwroconaOcena[i] = odwroconaOcena[i] + odwroconaOcena[i - 1];
-                 }
-             }
-             int losuj = 0;
-             int index = 0;
-             List<int[]> NowaPopulacjaRuletka = osobniki;
-             for (int i = 0; i < liczbaPopulacji; i++)
-             {
-                 losuj = rnd.Next(odwroconaOcena.Max());
-                 for (int j = 0; j < odwroconaOcena.Count; j++)
-                 {
-                     if (losuj < odwroconaOcena[j])
-                     {
-                         index = j;
-                     }
-                 }
-                 for (int k = 0; k < liczbaPopulacji; k++)
-                 {
-                     NowaPopulacjaRuletka[index][k] = osobniki[index][k];
-                 }
-             }
-             return NowaPopulacjaRuletka;
-         }
-         #endregion*/
     }
 }
