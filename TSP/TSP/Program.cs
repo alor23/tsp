@@ -11,7 +11,7 @@ namespace TSP
         public static int grupaTurniejowa = 3;
         public static float wspolczynnikMutacji = 0.0158f;
         public static int wspolczynnikKrzyzowania = 77;
-        public static String droga = @"berlin52.txt";
+        public static String droga = @"Europa.txt";
         public static Random rnd = new Random();
 
         static void Main(string[] args)
@@ -49,6 +49,16 @@ namespace TSP
             Console.WriteLine("koniec");
             Wyswietl(najlepszy);
             Console.Write(best);
+
+            int IndexOfFirstCity=Array.IndexOf(najlepszy, 0);
+            var FirstPart = najlepszy.Skip(IndexOfFirstCity).Take(najlepszy.Length);
+            var SecondPart = najlepszy.Skip(0).Take(IndexOfFirstCity);
+            var b = FirstPart.Concat(SecondPart);
+            Console.WriteLine();
+            foreach (var element in b)
+            {
+                Console.Write(element+" ");
+            }
             using (System.IO.StreamWriter sr = new System.IO.StreamWriter("..\\..\\..\\wynik.txt"))
             {
                 string wynik = "";
