@@ -58,21 +58,7 @@ namespace TSP
             foreach (var element in b)
             {
                 Console.Write(element+" ");
-            }
-            using (System.IO.StreamWriter sr = new System.IO.StreamWriter("..\\..\\..\\wynik.txt"))
-            {
-                string wynik = "";
-                for (int k = 0; k < najlepszy.Length; k++)
-                {
-                    if (k < najlepszy.Length - 1)
-                    {
-                        wynik += najlepszy[k] + "-";
-                    }
-                    else
-                        wynik += najlepszy[k] + " ";
-                }
-                sr.WriteLine(wynik + best.ToString());
-            }
+            }           
             Console.ReadKey();
         }
         #region krzyżowanie
