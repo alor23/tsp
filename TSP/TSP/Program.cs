@@ -36,13 +36,6 @@ namespace TSP
                     Console.WriteLine(ocena.Min());
                     best = ocena.Min();
                     najlepszy = osobniki[ocena.IndexOf(ocena.Min())];
-                    if (i % 10 == 0)
-                    {
-                        Wyswietl(najlepszy);
-                        Console.Write(best);
-                        Console.WriteLine("");
-                    }
-
                 }
                 i++;
             }
