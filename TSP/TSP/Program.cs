@@ -7,11 +7,11 @@ namespace TSP
     class Program
     {
         public static int lenght;
-        public static int liczbaPopulacji = 40;
+        public static int liczbaPopulacji = 30;
         public static int grupaTurniejowa = 3;
         public static float wspolczynnikMutacji = 0.0158f;
-        public static int wspolczynnikKrzyzowania = 77;
-        public static String droga = @"Europa.txt";
+        public static int wspolczynnikKrzyzowania = 70;
+        public static String droga = @"Stany.txt";
         public static Random rnd = new Random();
 
         static void Main(string[] args)
@@ -36,25 +36,13 @@ namespace TSP
                     Console.WriteLine(ocena.Min());
                     best = ocena.Min();
                     najlepszy = osobniki[ocena.IndexOf(ocena.Min())];
-                    if (i % 10 == 0)
-                    {
-                        Wyswietl(najlepszy);
-                        Console.Write(best);
-                        Console.WriteLine("");
-                    }
-
                 }
                 i++;
             }
-            Console.WriteLine("koniec");
-            Wyswietl(najlepszy);
-            Console.Write(best);
-
             int IndexOfFirstCity=Array.IndexOf(najlepszy, 0);
             var FirstPart = najlepszy.Skip(IndexOfFirstCity).Take(najlepszy.Length);
             var SecondPart = najlepszy.Skip(0).Take(IndexOfFirstCity);
             var b = FirstPart.Concat(SecondPart);
-            Console.WriteLine();
             foreach (var element in b)
             {
                 Console.Write(element+" ");
