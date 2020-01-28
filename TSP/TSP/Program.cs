@@ -139,7 +139,7 @@ namespace TSP
                     Console.Write(tab[i] + " ");
             }
         }
-        public static void Wyswietl2(List<int[]> tab)
+        public static void Wyswietl(List<int[]> tab)
         {
             for (int i = 0; i < tab.Count; i++)
             {
